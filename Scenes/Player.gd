@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var SPEED: float = 300.0
 @export var JUMP_VELOCITY: float = -200.0
 @export var double_jump_velocity: float = -150
-
+@on_ready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var has_double_jumped: bool = false
@@ -33,3 +33,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func update_animation():
+	
