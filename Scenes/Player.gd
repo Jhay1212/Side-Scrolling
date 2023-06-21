@@ -5,7 +5,8 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY: float = -200.0
 @export var double_jump_velocity: float = -150
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var has_double_jumped: bool = false
 var is_locked = false
@@ -33,12 +34,23 @@ func _physics_process(delta):
 		velocity.x = direction.x * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	move_and_slide()
+	update_animation()
+	change_direction()
 
 
 func update_animation():
-	if is_locked != false:
-		animated_sprite.play('run')
-	animated_sprite.play("idle")
-	
+	if not is_locked:
+		if direction.x != 0:
+			animated_sprite.play('run')
+		else:
+			animated_sprite.play("idle")
+		
+		if direction.y > 0:
+			animated_sprite.play('jump start')
+
+func change_direction():
+	if direction.x < 0:
+		animated_sprite.flip_h = true
+	elif direction.x > 0:
+		animated_sprite.flip_h = false
