@@ -390,9 +390,6 @@ height = 46.0
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, 1)
 script = ExtResource("1_idl20")
-SPEED = null
-JUMP_VELOCITY = null
-double_jump_velocity = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t41ri")
