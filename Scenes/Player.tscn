@@ -282,9 +282,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ke085")
 }],
-"loop": true,
+"loop": false,
 "name": &"jumo_Pend",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -308,7 +308,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o2kvx")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump_air",
 "speed": 10.0
 }, {
@@ -349,7 +349,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w1llj")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump_start",
 "speed": 10.0
 }, {
@@ -378,7 +378,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jlcey")
 }],
-"loop": true,
+"loop": false,
 "name": &"run",
 "speed": 10.0
 }]
@@ -393,7 +393,7 @@ script = ExtResource("1_idl20")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t41ri")
-animation = &"jump_start"
+animation = &"run"
 autoplay = "idle"
 centered = false
 offset = Vector2(-32, -32)
