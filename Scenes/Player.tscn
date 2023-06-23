@@ -268,7 +268,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rqobu")
 }],
-"loop": true,
+"loop": false,
 "name": &"j",
 "speed": 5.0
 }, {
